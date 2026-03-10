@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Practice Test Automation - Test Analytics Report</title>
+    <style>
+      :root { color-scheme: light; }
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 24px; color: #1f2937; }
+      h1, h2 { margin: 0 0 12px; }
+      .muted { color: #6b7280; margin-bottom: 20px; }
+      .grid { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 12px; margin: 18px 0 24px; }
+      .card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; background: #f9fafb; }
+      .label { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+      .value { font-size: 22px; font-weight: 700; }
+      table { width: 100%; border-collapse: collapse; margin: 10px 0 24px; font-size: 14px; }
+      th, td { border: 1px solid #e5e7eb; text-align: left; padding: 8px; vertical-align: top; }
+      th { background: #f3f4f6; }
+      .section { margin-top: 24px; }
+      @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); } }
+    </style>
+  </head>
+  <body>
+    <h1>Practice Test Automation - Test Analytics Report</h1>
+    <p class="muted">Generated at 3/10/2026, 10:52:01 PM. Range: last 30 days. Description: Practice Test Automation Demo</p>
+
+    <div class="grid">
+      <div class="card"><div class="label">Pass Rate</div><div class="value">100.0%</div></div>
+      <div class="card"><div class="label">Failure Rate</div><div class="value">0.0%</div></div>
+      <div class="card"><div class="label">Flakiness</div><div class="value">0.0%</div></div>
+      <div class="card"><div class="label">Stability</div><div class="value">100.0%</div></div>
+      <div class="card"><div class="label">Total Tests</div><div class="value">40</div></div>
+      <div class="card"><div class="label">Passed</div><div class="value">40</div></div>
+      <div class="card"><div class="label">Failed</div><div class="value">0</div></div>
+      <div class="card"><div class="label">Skipped</div><div class="value">0</div></div>
+      <div class="card"><div class="label">Avg Duration</div><div class="value">2.6s</div></div>
+      <div class="card"><div class="label">Total Duration</div><div class="value">1.7m</div></div>
+      <div class="card"><div class="label">Trend Points</div><div class="value">1</div></div>
+      <div class="card"><div class="label">Test Runs</div><div class="value">4</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Recent Tests</h2>
+      <table>
+        <thead><tr><th>Test</th><th>Status</th><th>Duration</th><th>Retries</th><th>Browser</th></tr></thead>
+        <tbody><tr>
+            <td>1) Language filter -&gt; Java</td>
+            <td>PASSED</td>
+            <td>1.2s</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>10) Language filter reapplies on Java -&gt; Any change</td>
+            <td>PASSED</td>
+            <td>828ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>9) Language filter reapplies on Java -&gt; Python change</td>
+            <td>PASSED</td>
+            <td>788ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>8) Sort by course name (alphabetical)</td>
+            <td>PASSED</td>
+            <td>735ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>7) Sort by enrollments (ascending numeric)</td>
+            <td>PASSED</td>
+            <td>737ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>6) Reset button visibility and behavior</td>
+            <td>PASSED</td>
+            <td>898ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>5) No results state</td>
+            <td>PASSED</td>
+            <td>1.0s</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>4) Combined filters -&gt; Python + Beginner + 10,000+</td>
+            <td>PASSED</td>
+            <td>969ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>3) Min enrollments -&gt; 10,000+</td>
+            <td>PASSED</td>
+            <td>810ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>2) Level filter -&gt; Beginner only</td>
+            <td>PASSED</td>
+            <td>858ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>1) Language filter -&gt; Java</td>
+            <td>PASSED</td>
+            <td>1.9s</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>2) Level filter -&gt; Beginner only</td>
+            <td>PASSED</td>
+            <td>590ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>3) Min enrollments -&gt; 10,000+</td>
+            <td>PASSED</td>
+            <td>577ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>4) Combined filters -&gt; Python + Beginner + 10,000+</td>
+            <td>PASSED</td>
+            <td>758ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>5) No results state</td>
+            <td>PASSED</td>
+            <td>681ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>6) Reset button visibility and behavior</td>
+            <td>PASSED</td>
+            <td>620ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>7) Sort by enrollments (ascending numeric)</td>
+            <td>PASSED</td>
+            <td>436ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>8) Sort by course name (alphabetical)</td>
+            <td>PASSED</td>
+            <td>456ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>9) Language filter reapplies on Java -&gt; Python change</td>
+            <td>PASSED</td>
+            <td>515ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr><tr>
+            <td>10) Language filter reapplies on Java -&gt; Any change</td>
+            <td>PASSED</td>
+            <td>499ms</td>
+            <td>0</td>
+            <td>unknown</td>
+          </tr></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Flaky Tests</h2>
+      <table>
+        <thead><tr><th>Test</th><th>Flakiness</th><th>Total Runs</th><th>Trend</th></tr></thead>
+        <tbody><tr><td colspan="4">No flaky tests</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Performance Alerts</h2>
+      <table>
+        <thead><tr><th>Test</th><th>Current Duration</th><th>Increase</th><th>Alerted At</th></tr></thead>
+        <tbody><tr>
+            <td>1) Language filter -&gt; Java</td>
+            <td>22.9s</td>
+            <td>1.60%</td>
+            <td>3/10/2026, 9:01:50 PM</td>
+          </tr><tr>
+            <td>1) Language filter -&gt; Java</td>
+            <td>22.6s</td>
+            <td>0.00%</td>
+            <td>3/10/2026, 7:52:58 PM</td>
+          </tr></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Test Runs</h2>
+      <table>
+        <thead><tr><th>Run Start</th><th>Total</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Pass Rate</th><th>Duration</th></tr></thead>
+        <tbody><tr>
+            <td>3/10/2026, 10:49:01 PM</td>
+            <td>10</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+            <td>100.0%</td>
+            <td>8.9s</td>
+          </tr><tr>
+            <td>3/10/2026, 10:37:00 PM</td>
+            <td>10</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+            <td>100.0%</td>
+            <td>7.1s</td>
+          </tr><tr>
+            <td>3/10/2026, 9:01:50 PM</td>
+            <td>10</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+            <td>100.0%</td>
+            <td>44.1s</td>
+          </tr><tr>
+            <td>3/10/2026, 7:52:58 PM</td>
+            <td>10</td>
+            <td>10</td>
+            <td>0</td>
+            <td>0</td>
+            <td>100.0%</td>
+            <td>44.2s</td>
+          </tr></tbody>
+      </table>
+    </div>
+  </body>
+</html>
