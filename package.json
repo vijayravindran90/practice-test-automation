@@ -1,0 +1,20 @@
+{
+  "name": "codespaces-blank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:parallel": "playwright test --config=playwright.config.ts --workers=10",
+    "test:sequential": "playwright test --config=playwright.config.ts --workers=1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.4.0",
+    "test-analytics-reporter": "^1.1.1"
+  }
+}
