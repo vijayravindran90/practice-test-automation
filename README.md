@@ -51,6 +51,8 @@ npm run test:parallel
 npm run test:sequential
 ```
 
+Each test run appends a new run entry (mode, pass/fail counts, duration, workers) to `history/test-history.json` automatically.
+
 ## View HTML Report
 
 After test execution:
@@ -89,6 +91,10 @@ Or set the history file via environment variable:
 ```bash
 REPORT_HISTORY_FILE=path/to/history.json npm run report:generate
 ```
+
+### Summary Report Performance Comparison Snapshot
+
+![Summary Report Performance Comparison](docs/images/summary-performance-comparison.png)
 
 ## Test Analytics Access
 
