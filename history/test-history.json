@@ -43,6 +43,28 @@
       "failed": 0,
       "skipped": 0,
       "durationMs": 8900
+    },
+    {
+      "id": "run-20260311082956",
+      "timestamp": "2026-03-11T08:29:56.972Z",
+      "mode": "sequential",
+      "workers": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 45095.505
+    },
+    {
+      "id": "run-20260311083126",
+      "timestamp": "2026-03-11T08:31:26.039Z",
+      "mode": "parallel",
+      "workers": 10,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 23786.018000000004
     }
   ]
 }

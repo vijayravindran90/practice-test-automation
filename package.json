@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:parallel": "playwright test --config=playwright.config.ts --workers=10",
-    "test:sequential": "playwright test --config=playwright.config.ts --workers=1",
+    "test": "node scripts/run-tests-with-history.js --mode parallel",
+    "test:parallel": "node scripts/run-tests-with-history.js --mode parallel --workers 10",
+    "test:sequential": "node scripts/run-tests-with-history.js --mode sequential --workers 1",
     "report:generate": "node scripts/generate-summary-report.js"
   },
   "keywords": [],
