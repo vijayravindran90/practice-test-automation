@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automation Summary Report</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #14213d;
+      --muted: #52616b;
+      --border: #d8dee4;
+      --good: #15803d;
+      --bad: #b91c1c;
+      --accent: #0f766e;
+      --plot: #eff6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top right, #dbeafe 0, transparent 36%),
+        linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Segoe UI', sans-serif;
+    }
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      padding: 16px;
+    }
+    h1, h2 { margin: 0 0 10px; }
+    .muted { color: var(--muted); margin: 0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fbfdff;
+    }
+    .metric .k { font-size: 12px; color: var(--muted); }
+    .metric .v { font-size: 24px; font-weight: 700; }
+    .good { color: var(--good); }
+    .bad { color: var(--bad); }
+    .split {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 16px;
+    }
+    svg { width: 100%; height: auto; }
+    .grid { stroke: #d1d5db; stroke-width: 1; }
+    .axis { fill: #475569; font-size: 11px; }
+    .bar-label { fill: #1e293b; font-size: 12px; font-weight: 700; }
+    .plot-bg { fill: var(--plot); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #eef2ff;
+    }
+    @media (max-width: 900px) {
+      body { padding: 14px; }
+      .stats { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+      .split { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="layout">
+    <section class="card">
+      <h1>Pass/Fail Trend and Performance Summary</h1>
+      <p class="muted">Generated: 3/11/2026, 8:05:19 AM | Source: history/test-history.json</p>
+    </section>
+
+    <section class="card stats">
+      <div class="metric"><div class="k">Runs</div><div class="v">4</div></div>
+      <div class="metric"><div class="k">Total Tests</div><div class="v">40</div></div>
+      <div class="metric"><div class="k">Pass Rate</div><div class="v good">100.0%</div></div>
+      <div class="metric"><div class="k">Failures</div><div class="v good">0</div></div>
+    </section>
+
+    <section class="split">
+      <article class="card">
+        <h2>Pass/Fail Trend</h2>
+        
+<svg viewBox="0 0 860 240" role="img" aria-label="Pass rate trend chart">
+  <rect x="56" y="16" width="788" height="188" class="plot-bg" />
+  <line x1="56" y1="204" x2="844" y2="204" class="grid" /><text x="8" y="208" class="axis">0%</text><line x1="56" y1="157" x2="844" y2="157" class="grid" /><text x="8" y="161" class="axis">25%</text><line x1="56" y1="110" x2="844" y2="110" class="grid" /><text x="8" y="114" class="axis">50%</text><line x1="56" y1="63" x2="844" y2="63" class="grid" /><text x="8" y="67" class="axis">75%</text><line x1="56" y1="16" x2="844" y2="16" class="grid" /><text x="8" y="20" class="axis">100%</text>
+  <polyline fill="none" stroke="#0f766e" stroke-width="3" points="56,16 318.66666666666663,16 581.3333333333333,16 844,16" />
+  <circle cx="56" cy="16" r="5" fill="#16a34a"><title>3/10/2026, 7:52:58 PM | Pass rate 100.0% | Passed 10 | Failed 0</title></circle><circle cx="318.66666666666663" cy="16" r="5" fill="#16a34a"><title>3/10/2026, 9:01:50 PM | Pass rate 100.0% | Passed 10 | Failed 0</title></circle><circle cx="581.3333333333333" cy="16" r="5" fill="#16a34a"><title>3/10/2026, 10:37:00 PM | Pass rate 100.0% | Passed 10 | Failed 0</title></circle><circle cx="844" cy="16" r="5" fill="#16a34a"><title>3/10/2026, 10:49:01 PM | Pass rate 100.0% | Passed 10 | Failed 0</title></circle>
+  <text x="56" y="230" text-anchor="middle" class="axis">3/10/2026</text><text x="318.66666666666663" y="230" text-anchor="middle" class="axis">3/10/2026</text><text x="581.3333333333333" y="230" text-anchor="middle" class="axis">3/10/2026</text><text x="844" y="230" text-anchor="middle" class="axis">3/10/2026</text>
+</svg>
+      </article>
+      <article class="card">
+        <h2>Parallel vs Sequential</h2>
+        
+<svg viewBox="0 0 560 220" role="img" aria-label="Average duration by execution mode">
+  <rect x="60" y="16" width="476" height="164" class="plot-bg" />
+  
+        <rect x="138" y="150.28312570781426" width="120" height="29.71687429218573" fill="#0ea5e9" rx="10" />
+        <text x="198" y="202" text-anchor="middle" class="axis">Parallel</text>
+        <text x="198" y="142.28312570781426" text-anchor="middle" class="bar-label">8.0 s</text>
+      
+        <rect x="338" y="16" width="120" height="164" fill="#f97316" rx="10" />
+        <text x="398" y="202" text-anchor="middle" class="axis">Sequential</text>
+        <text x="398" y="8" text-anchor="middle" class="bar-label">44.1 s</text>
+      
+</svg>
+        <p class="muted">
+          Parallel avg: 8.0 s |
+          Sequential avg: 44.1 s |
+          Estimated speedup: 5.52x
+        </p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Recent Runs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Run Start</th>
+            <th>Mode</th>
+            <th>Workers</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Total</th>
+            <th>Pass Rate</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td>3/10/2026, 10:49:01 PM</td>
+        <td>parallel</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>10</td>
+        <td>100.0%</td>
+        <td>8.9 s</td>
+      </tr>
+      <tr>
+        <td>3/10/2026, 10:37:00 PM</td>
+        <td>parallel</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>10</td>
+        <td>100.0%</td>
+        <td>7.1 s</td>
+      </tr>
+      <tr>
+        <td>3/10/2026, 9:01:50 PM</td>
+        <td>sequential</td>
+        <td>1</td>
+        <td>10</td>
+        <td>0</td>
+        <td>10</td>
+        <td>100.0%</td>
+        <td>44.1 s</td>
+      </tr>
+      <tr>
+        <td>3/10/2026, 7:52:58 PM</td>
+        <td>sequential</td>
+        <td>1</td>
+        <td>10</td>
+        <td>0</td>
+        <td>10</td>
+        <td>100.0%</td>
+        <td>44.2 s</td>
+      </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

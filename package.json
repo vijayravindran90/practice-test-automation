@@ -6,7 +6,8 @@
   "scripts": {
     "test": "playwright test",
     "test:parallel": "playwright test --config=playwright.config.ts --workers=10",
-    "test:sequential": "playwright test --config=playwright.config.ts --workers=1"
+    "test:sequential": "playwright test --config=playwright.config.ts --workers=1",
+    "report:generate": "node scripts/generate-summary-report.js"
   },
   "keywords": [],
   "author": "",

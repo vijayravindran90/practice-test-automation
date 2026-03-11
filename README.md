@@ -59,6 +59,37 @@ After test execution:
 npx playwright show-report
 ```
 
+## Generate Summary Report
+
+Generate a standalone `summary.html` that visualizes:
+
+- Pass/Fail trend over historical runs
+- Parallel vs Sequential execution performance comparison
+
+Run with the default history file (`history/test-history.json`):
+
+```bash
+npm run report:generate
+```
+
+Use a custom history input file:
+
+```bash
+npm run report:generate -- --input path/to/history.json
+```
+
+Write output to a custom location:
+
+```bash
+npm run report:generate -- --output reports/summary.html
+```
+
+Or set the history file via environment variable:
+
+```bash
+REPORT_HISTORY_FILE=path/to/history.json npm run report:generate
+```
+
 ## Test Analytics Access
 
 - URL: https://vijayravindran90.github.io/Test-analytics/
