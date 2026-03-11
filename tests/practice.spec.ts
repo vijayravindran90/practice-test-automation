@@ -1,11 +1,14 @@
 import { expect, test } from '@playwright/test';
 import { PracticeTablePage } from '../pages/practiceTablePage';
+let tablePage: PracticeTablePage;
+
+test.beforeEach(async ({ page }) => {
+  tablePage = new PracticeTablePage(page);
+  await tablePage.open();
+});
 
 test.describe('Practice Table Filters and Sorting', () => {
   test('1) Language filter -> Java', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     await tablePage.selectLanguage('Java');
 
     const visibleLanguages = await tablePage.getVisibleLanguageValues();
@@ -14,9 +17,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('2) Level filter -> Beginner only', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     await tablePage.setLevel('Intermediate', false);
     await tablePage.setLevel('Advanced', false);
 
@@ -26,8 +26,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('3) Min enrollments -> 10,000+', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
 
     await tablePage.selectMinEnrollments('10000');
 
@@ -37,8 +35,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('4) Combined filters -> Python + Beginner + 10,000+', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
 
     await tablePage.selectLanguage('Python');
     await tablePage.setLevel('Intermediate', false);
@@ -56,9 +52,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('5) No results state', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     await tablePage.selectLanguage('Python');
     await tablePage.setLevel('Beginner', false);
     await tablePage.setLevel('Intermediate', false);
@@ -70,9 +63,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('6) Reset button visibility and behavior', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     expect(await tablePage.getResetButtonDisplayValue()).toBe('none');
 
     await tablePage.selectLanguage('Java');
@@ -90,9 +80,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('7) Sort by enrollments (ascending numeric)', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     await tablePage.sortBy('col_enroll');
 
     const enrollments = await tablePage.getVisibleEnrollments();
@@ -101,20 +88,14 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('8) Sort by course name (alphabetical)', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
 
     await tablePage.sortBy('col_course');
-
     const courses = await tablePage.getVisibleCourseNames();
     const sorted = [...courses].sort((a, b) => a.localeCompare(b));
     expect(courses).toEqual(sorted);
   });
 
   test('9) Language filter reapplies on Java -> Python change', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     await tablePage.selectLanguage('Java');
     const javaLanguages = await tablePage.getVisibleLanguageValues();
     expect(javaLanguages.length).toBeGreaterThan(0);
@@ -127,9 +108,6 @@ test.describe('Practice Table Filters and Sorting', () => {
   });
 
   test('10) Language filter reapplies on Java -> Any change', async ({ page }) => {
-    const tablePage = new PracticeTablePage(page);
-    await tablePage.open();
-
     await tablePage.selectLanguage('Java');
     expect(await tablePage.getVisibleRowCount()).toBeGreaterThan(0);
 
