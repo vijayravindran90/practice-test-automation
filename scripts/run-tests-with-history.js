@@ -148,13 +148,20 @@ function main() {
   const historyPath = path.resolve(process.cwd(), args.historyFile);
   const reportDir = path.dirname(reportPath);
   const reportName = path.basename(reportPath);
+  let playwrightCli;
+  try {
+    playwrightCli = require.resolve('@playwright/test/cli');
+  } catch (error) {
+    console.error('[history] Could not resolve @playwright/test/cli. Run npm install first.');
+    process.exit(1);
+  }
 
   fs.mkdirSync(reportDir, { recursive: true });
   if (fs.existsSync(reportPath)) {
     fs.unlinkSync(reportPath);
   }
 
-  const playwrightArgs = ['playwright', 'test', '--config', args.config];
+  const playwrightArgs = [playwrightCli, 'test', '--config', args.config];
   if (Number.isFinite(args.workers) && args.workers > 0) {
     playwrightArgs.push('--workers', String(args.workers));
   }
@@ -162,7 +169,7 @@ function main() {
     playwrightArgs.push(...args.passthrough);
   }
 
-  const result = spawnSync('npx', playwrightArgs, {
+  const result = spawnSync(process.execPath, playwrightArgs, {
     stdio: 'inherit',
     env: {
       ...process.env,
@@ -172,6 +179,11 @@ function main() {
       PLAYWRIGHT_JSON_OUTPUT_NAME: reportName,
     },
   });
+
+  if (result.error) {
+    console.error(`[history] Failed to start Playwright command: ${result.error.message}`);
+    process.exit(1);
+  }
 
   try {
     const report = readJsonIfExists(reportPath);

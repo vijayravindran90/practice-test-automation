@@ -33,9 +33,7 @@ export default defineConfig({
         backendUrl: 'https://test-analytics-production.up.railway.app/api',
         projectId: '8de727c1-3e63-4200-a798-97fbb0e6e8d1',
         projectName: 'Practice Test Automation',
-        apiKey: analyticsApiKey,
         // Keep local/CI runs stable when API credentials are not configured.
-        enabled: Boolean(analyticsApiKey),
       },
     ],
   ],

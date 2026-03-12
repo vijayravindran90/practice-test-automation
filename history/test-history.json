@@ -76,6 +76,72 @@
       "failed": 0,
       "skipped": 0,
       "durationMs": 40466.340000000004
+    },
+    {
+      "id": "run-20260312044153",
+      "timestamp": "2026-03-12T04:41:53.731Z",
+      "mode": "sequential",
+      "workers": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 30730.411
+    },
+    {
+      "id": "run-20260312044319",
+      "timestamp": "2026-03-12T04:43:19.174Z",
+      "mode": "sequential",
+      "workers": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 30492.227
+    },
+    {
+      "id": "run-20260312044440",
+      "timestamp": "2026-03-12T04:44:40.772Z",
+      "mode": "parallel",
+      "workers": 10,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 17655.488999999998
+    },
+    {
+      "id": "run-20260312044810",
+      "timestamp": "2026-03-12T04:48:10.017Z",
+      "mode": "sequential",
+      "workers": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 31387.490999999998
+    },
+    {
+      "id": "run-20260312045153",
+      "timestamp": "2026-03-12T04:51:53.139Z",
+      "mode": "sequential",
+      "workers": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 28480.569000000003
+    },
+    {
+      "id": "run-20260312045235",
+      "timestamp": "2026-03-12T04:52:35.160Z",
+      "mode": "parallel",
+      "workers": 10,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 25564.644
     }
   ]
 }
