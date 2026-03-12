@@ -146,8 +146,10 @@ function main() {
   const args = parseArgs(process.argv.slice(2));
   const reportPath = path.resolve(process.cwd(), args.reportFile);
   const historyPath = path.resolve(process.cwd(), args.historyFile);
+  const reportDir = path.dirname(reportPath);
+  const reportName = path.basename(reportPath);
 
-  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+  fs.mkdirSync(reportDir, { recursive: true });
   if (fs.existsSync(reportPath)) {
     fs.unlinkSync(reportPath);
   }
@@ -164,7 +166,10 @@ function main() {
     stdio: 'inherit',
     env: {
       ...process.env,
-      PLAYWRIGHT_JSON_OUTPUT_NAME: reportPath,
+      // Support multiple Playwright versions that use different JSON output env names.
+      PLAYWRIGHT_JSON_OUTPUT_FILE: reportPath,
+      PLAYWRIGHT_JSON_OUTPUT_DIR: reportDir,
+      PLAYWRIGHT_JSON_OUTPUT_NAME: reportName,
     },
   });
 

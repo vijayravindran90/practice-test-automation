@@ -31,6 +31,8 @@ npx playwright install
 export API_KEY="your_api_key_here"
 ```
 
+You can also use `TEST_ANALYTICS_API_KEY`. If neither variable is set, the analytics reporter is disabled automatically so local test runs still generate Playwright JSON/HTML reports.
+
 ## Run Tests
 
 - Run all tests (default):
